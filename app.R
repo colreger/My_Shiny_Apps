@@ -9,9 +9,7 @@ about_page <- tabPanel(
   title = "Info",
   titlePanel("Info"),
   br(),
-  p("Das ist eine Trainings-App, die ich gemäß der Anleitung von Mate Pocs gebaut habe."),
-  br(),
-  p("Ich habe dabei folgende R-Packages angewandt:",br(),"shiny, shinythemes, data.table, ggplot2."),
+  p("Das ist eine App, die ich zu Trainingszwecken gemäß der Anleitung von Mate Pocs gebaut habe."),
   br(),
   "August 2022")
 
@@ -22,8 +20,7 @@ main_page <- tabPanel(
     sidebarPanel(
       title = "Inputs",
       fileInput("csv_input", "Lade bitte eine CSV-Datei hoch:", accept = ".csv"),
-      h5("Fülle bitte zwei der folgenden drei Felder aus:",br(),
-         " (zwei numerische bzw. eine numerische und eine kategorielle Variable)"),
+      h5("Fülle bitte zwei der folgenden zwei bzw. drei Felder aus:"),
       br(),
       icon("narwhal", class = NULL, lib = "font-awesome"),
       selectInput("num_var_1", "Numerische Variable", choices = c(not_sel)),
@@ -39,7 +36,7 @@ main_page <- tabPanel(
       
       plotOutput("plot_1"),
       title = "Statistics",
-      h3("Zusammenfassende Statistik"),
+      h3("Statistik"),
       fluidRow(
             column(width = 4, strong(textOutput("num_var_1_title"))),
             column(width = 4, strong(textOutput("num_var_2_title"))),
@@ -149,8 +146,8 @@ create_combined_table <- function(data_input, num_var_1, num_var_2, fact_var){
 }
 
 ui <- navbarPage(
-  title = "Data Analyser",
-  theme = shinytheme('united'),
+  title = "Datenanalyse",
+  theme = shinytheme('simplex'),
   main_page,
   about_page
 )
