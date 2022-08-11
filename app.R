@@ -11,6 +11,7 @@ about_page <- tabPanel(
   br(),
   p("Das ist eine App, die ich zu Trainingszwecken gemäß der Anleitung von Mate Pocs gebaut habe."),
   br(),
+  ("Mit ihrer Hilfe habe ich gelernt: packages data.table und ggplot2, reactive programming in Shiny"),
   "August 2022")
 
 main_page <- tabPanel(
@@ -47,9 +48,9 @@ main_page <- tabPanel(
             column(width = 4, tableOutput("num_var_2_summary_table")),
             column(width = 4, tableOutput("fact_var_summary_table"))
           ),
-          fluidRow(
-            column(width = 12, strong("Combined Statistics"))
-          ),
+          #fluidRow(
+            #column(width = 12, strong("Combined Statistics"))
+          #),
           fluidRow(
             column(width = 12, tableOutput("combined_summary_table"))
           
